@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/style.css?v=<?= time() ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="128x128" href="../images/favicon.png">
+    <title>Cass64</title>
+</head>
+
+<body>
+<nav>
+    <button class="menu-toggle">☰</button>
+    <div class="bot-promo"></div>
+    <span class="site-title">Cass64 - Developer</span>
+    <div class="menu-container">
+        <ul class="menu" id="menu">
+            <li><a href="./index.html">Accueil</a></li>
+            <li><a href="./serveur.html">Mes Serveurs</a></li>
+            <li><a href="./reseaux.html">Mes Réseaux</a></li>
+            <li><a href="./manga.html">Mangas & Animés</a></li>
+            <li id="page_actuelle"><a href="#">Cass64</a></li>
+        </ul>
+    </div>
+    <div class="nav-buttons">
+    <a href="./delta.html" class="nav-btn">Project : Delta</a>
+    <a href="./etherya.html" class="nav-btn">Etherya</a>
+</div>
+    <img src="https://i.pinimg.com/736x/17/26/0a/17260a1d8cc3f8729eaa454da2342bbc.jpg" alt="Logo" class="nav-logo"> <!-- ← Ajout ici -->
+</nav>
+
+<h1 id="titre_accueil">Bienvenue chez <span class="cass-highlight">Cass64</span></h1>
+
+
+<h2 class="titre3_accueil">QUI SUIS-JE ?</h2>
+<div class="embed_accueil2">
+    <img class="img_embed_accueil" src="../images/Cass-pfp.png" alt="img_embed">
+    <div class="text_embed_accueil">
+        <p>
+            Moi c’est <strong>Cass64</strong>, passionné par l’univers Discord, le design, l’animation de communautés et membre actif de plusieurs projets dont <strong>Etherya</strong> et <strong>Project : Delta</strong>. 
+            Que ce soit pour encadrer une équipe, modérer un serveur ou construire des événements engageants, j’aime donner vie à des espaces uniques.
+        </p>
+    </div>
+</div>
+<h2 class="titre2_accueil">MES VALEURS</h2>
+<div class="embed_accueil">
+    <img class="img_embed_accueil" src="https://i.pinimg.com/736x/c8/c1/8d/c8c18de0375e7d0f0481c8227c94259b.jpg" alt="img_embed">
+    <div class="text_embed_accueil">
+        <p>
+            Pour moi, un bon serveur repose sur trois piliers : l’écoute, la créativité et la cohésion. C’est ce que je m’efforce d’appliquer au quotidien dans tous les projets auxquels je participe.
+            Mon objectif est simple : créer un environnement sain, actif et amusant où chacun peut trouver sa place et s’exprimer.
+        </p>
+    </div>
+</div>
+
+<h2 class="titre3_accueil">Etherya & Delta</h2>
+<div class="embed_accueil2">
+    <img class="img_embed_accueil" src="https://i.pinimg.com/736x/73/eb/23/73eb23419fea159ef4300637b21d6a70.jpg" alt="img_embed">
+    <div class="text_embed_accueil">
+        <p>
+            En tant que <strong>co-fondateur</strong> d’<strong>Etherya</strong> et de <strong>Project : Delta</strong>, je suis impliqué dans tous les aspects des projets : de la création du concept à la mise en place des fonctionnalités, en passant par la gestion du staff, la modération et l’organisation d’événements. 
+            J’apporte également mes idées et mon œil critique pour améliorer continuellement l’expérience utilisateur.
+            <br><br>
+        </p>
+    </div>
+</div>
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-content">
+                <a href="index.html">
+                    <img class="logo_footer" src="../images/Isey.png" alt="img_logo_footer">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 - Iseyg | Tous droits réservés.</p>
+        </div>
+        <div class="footer-icons">
+            <div class="footer-support">
+                <p class="footer-title">Etherya</p>
+                <a href="https://discord.gg/2CXDSSRTYz" target="_blank">
+                    <img class="logo_footer" src="../images/ether.jpg" alt="Etherya">
+                </a>
+            </div>
+            <div class="footer-socials">
+                <p class="socials-title">Project : Delta</p>
+                <a href="https://discord.gg/rWuWu8YyZA" target="_blank">
+                    <img class="logo_footer" src="../images/delta.png" alt="Discord">
+                </a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1356693934012891176" target="_blank">
+                    <img class="logo_footer" src="../images/delta2.png" alt="Invite Bot">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
