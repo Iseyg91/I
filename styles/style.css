@@ -1,0 +1,894 @@
+/* ----------------- Styles généraux ----------------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Alkatra', serif;
+  overflow-x: hidden;
+  color: white;
+}
+
+body {
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('https://i.pinimg.com/736x/d1/c8/30/d1c830340acf294aa4258e6b75db19bc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: bgScroll 60s linear infinite;
+}
+
+@keyframes bgScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* ----------------- Titres ----------------- */
+#titre_accueil {
+  font-size: 3rem;
+  margin-top: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.titre2_accueil, .titre3_accueil {
+  color: white;
+  padding: 30px 20px 10px;
+  position: relative;
+  font-size: 1.75rem;
+  display: inline-block;
+}
+
+.titre2_accueil {
+  padding-left: 50px;
+}
+
+.titre3_accueil {
+  padding-right: 50px;
+  text-align: right;
+  display: block;
+}
+
+.titre2_accueil::after, .titre3_accueil::after {
+  content: "";
+  display: block;
+  width: calc(100% - 40px);
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+.titre2_accueil::after {
+  left: 50px;
+}
+
+.titre3_accueil::after {
+  right: 50px;
+}
+
+/* ----------------- Embeds Accueil ----------------- */
+.embed_accueil, .embed_accueil2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 1400px;
+  margin: 16px auto;
+  gap: 20px;
+}
+
+.embed_accueil {
+  margin-left: 20px;
+}
+
+.embed_accueil2 {
+  margin-right: 20px;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+.img_embed_accueil {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.text_embed_accueil {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 1.5rem;
+}
+
+.text_embed_accueil h2 {
+  font-size: 2rem;
+}
+
+/* ----------------- Responsive ----------------- */
+
+/* Moyens écrans */
+@media (max-width: 1024px) {
+  .titre2_accueil, .titre3_accueil {
+    text-align: center;
+    display: block;
+    padding-right: 0;
+  }
+
+  .titre2_accueil::after, .titre3_accueil::after {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+  .embed_accueil2 {
+    justify-content: center;
+  }
+}
+
+/* Petits écrans */
+@media (max-width: 768px) {
+  html, body {
+    background-attachment: scroll;
+    padding: 10px;
+    height: auto;
+  }
+
+  #titre_accueil, .titre2_accueil, .titre3_accueil {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .titre2_accueil::after, .titre3_accueil::after {
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .embed_accueil, .embed_accueil2 {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    margin: 30px 0;
+  }
+
+  .text_embed_accueil {
+    text-align: center;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  .img_embed_accueil {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .menu-toggle {
+    font-size: 70px;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 100;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .menu li a {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .text_embed_accueil {
+    font-size: 1rem;
+  }
+
+  .img_embed_accueil {
+    width: 100%;
+  }
+
+  .menu li a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Très grands écrans */
+@media (min-width: 1600px) {
+  #titre_accueil {
+    font-size: 4rem;
+  }
+
+  .text_embed_accueil {
+    font-size: 2rem;
+  }
+
+  .img_embed_accueil {
+    max-width: 500px;
+  }
+}
+
+    .img_embed_accueil {
+        width: 100%;
+        height: 150px;
+    }
+
+    .text_embed_accueil p {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+/* ----------------- Footer ----------------- */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 20px; /* Plus d’espace */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le contenu principal */
+    flex-direction: column;
+    position: relative;
+    min-height: 150px; /* Empêche que le footer soit trop petit */
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-socials {
+    position: absolute;
+    right: 150px;
+    bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr 1fr; /* une ligne pour le titre, deux pour les icônes */
+    gap: 15px;
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    text-align: center; /* pour centrer le titre */
+}
+
+.socials-title {
+    text-decoration: underline;
+    grid-column: 1 / -1; /* le titre prend toute la largeur */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    color: white; /* si besoin pour s'assurer qu'ils soient lisibles */
+    margin-bottom: 10px;
+    
+}
+
+.footer-socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px; /* Plus grand */
+    height: 105px;
+    background-color: #000000;
+    border-radius: 12px; /* Coins légèrement arrondis */
+}
+
+.footer-socials img {
+    width: 100px; /* Plus grand */
+    height: 100px;
+    object-fit: contain;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.logo_footer {
+    width: 150px; /* Augmente la taille des logos */
+    height: auto;
+    border-radius: 100px;
+}
+.footer-title {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+/* Style pour le support Discord */
+.footer-support {
+    position: absolute;
+    left: 150px; /* Place à gauche */
+    bottom: 132px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+.footer-support p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-support a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #000000;
+    border-radius: 12px;
+}
+
+.footer-support img {
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+}
+
+/* RESPONSIVE - Tout en ligne sous les droits réservés */
+@media screen and (max-width: 1200px) {
+    .footer-support, .footer-socials {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin-top: 20px;
+    }
+
+    .footer-socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-support {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Fusionne les deux blocs (support + socials) sur une même ligne */
+    .footer-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+    }
+}
+
+/* ----------------- Scrollbar ----------------- */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #6d5d5d;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #f8f7f7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #f0eded;
+}
+
+/* ----------------- Navigation ----------------- */
+nav {
+    background-color: #000000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+    z-index: 101; /* Ajout d'un z-index élevé pour qu'il soit toujours devant */
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-size: 25px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    width: auto;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    transition: background 0.3s ease;
+    display: block;
+    text-align: center;
+    width: auto;
+}
+
+.menu li a:hover {
+    background: #2d0101;
+    border-radius: 5px;
+}
+
+#page_actuelle {
+    background-color: rgb(70, 5, 5);
+    border-radius: 5px;
+}
+
+/* ----------------- Menu plein écran (initialement caché) ----------------- */
+.menu {
+    position: fixed;
+    top: -10%; /* Masqué par défaut en haut de l'écran */
+    left: -110%; /* Masqué par défaut à gauche de l'écran */
+    width: 100%;
+    height: 110vh; /* Hauteur de l'écran */
+    background-color: hsla(0, 0%, 7%, 0.212);
+    backdrop-filter: blur(10px); /* Applique un flou à l'arrière-plan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 100;
+}
+
+.menu.show {
+    left: 0; /* Affiche le menu en pleine largeur de l'écran */
+}
+
+.menu li a {
+    font-size: 30px;
+    padding: 20px;
+}
+
+/* ----------------- Responsivité ----------------- */
+@media (max-width: 1024px) {
+    .menu li a {
+        font-size: 30px;
+        padding: 20px;
+    }
+    .menu-toggle {
+        font-size: 70px; /* Augmentation de la taille du bouton */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+        padding: 10px;
+    }
+
+    /* Menu */
+    .menu-toggle {
+        font-size: 70px; /* Augmentation de la taille du bouton */
+    }
+
+    .menu {
+        position: fixed;
+        top: -6%; /* Affichage complet dès le top de l'écran */
+        left: -110%; /* Toujours masqué à gauche par défaut */
+        width: 100%;
+        height: 110vh; /* Prend toute la hauteur */
+        background-color: hsla(0, 0%, 7%, 0.212);
+        backdrop-filter: blur(10px); /* Applique un flou à l'arrière-plan */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.3s ease;
+        z-index: 100;
+        gap: 10px; /* Espacement plus large entre les liens */
+        padding: 15px;
+    }
+
+    .menu li a {
+        font-size: 24px; /* Taille de police augmentée */
+        padding: 15px; /* Plus de padding interne */
+    }
+    nav {
+        background-color: #111;
+        padding: 30px 30px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+}
+
+/*-------------------- Scroll Button -----------------*/
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 12px 16px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+
+.scroll-button:hover {
+    background-color: #404EED;
+}
+
+
+#titre_accueil {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+.amh-highlight {
+    background: linear-gradient(-45deg, #b9145e, #000000, #ffffff, #640707);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.cass-highlight {
+    background: linear-gradient(-45deg, #ffffff, #ffa3d9, #e0bcff, #ffffff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.shadow-highlight {
+    background: linear-gradient(-45deg, #ffffff, #ff7c7c, #ffb274, #ffffff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.modo-highlight {
+    background: linear-gradient(-45deg, #ffffff, #ffff76, #c0fdff, #ffffff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.delta-highlight {
+    background: linear-gradient(-45deg, #ffffff, #000000, #000000, #ffffff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.etherya-highlight {
+    background: linear-gradient(-45deg, #ffb5fa, #d874ff, #6b1b7e, #ff8cf3);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.manga-highlight {
+    background: linear-gradient(-45deg, #1d0101, #ffffff, #000000, #f695ff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.serveur-highlight {
+    background: linear-gradient(-45deg, #1d0101, #f90233, #000000, #ff3770);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+.cass-highlight {
+    background: linear-gradient(-45deg, #8c40ff, #f3bbff, #420852, #2d1b39);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    font-weight: bold;
+}
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.dedicace {
+    font-size: 0.85em;
+    font-style: italic;
+    color: #888;
+    margin-top: 1em;
+}
+.nav-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-slogan {
+    font-family: 'Alkatra', cursive;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+.site-title {
+    font-size: 28px; /* ajuste la taille selon ton besoin */
+    font-weight: bold; /* optionnel, pour que ce soit plus lisible */
+    white-space: nowrap; /* pour forcer le texte à rester sur une seule ligne */
+}
+.nav-logo {
+    height: 60px;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.nav-buttons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 99;
+}
+
+.nav-btn {
+    background-color: #000000;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: background 0.9s ease;
+}
+
+.nav-btn:hover {
+    background-color: #000000;
+}
+
+.embed_accueil {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.img_embed_accueil {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.text_embed_accueil {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text_embed_accueil p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.dedicace {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #ffaeae;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.site-title {
+    background: linear-gradient(45deg, #ffffff, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease infinite;
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
+}
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 30px 50px;
+    justify-items: center;
+}
+
+.social-grid a {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: white;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    width: 160px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.social-grid a:nth-child(1) { animation-delay: 0.1s; }
+.social-grid a:nth-child(2) { animation-delay: 0.2s; }
+.social-grid a:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-grid a:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.social-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+
+
+.social-grid a:hover .social-icon {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.social-grid p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* très grand */
+    gap: 30px;
+    padding: 40px 60px;
+    justify-items: center;
+}
+
+.manga-grid a {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: white;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    width: 100%;
+    max-width: 320px; /* très large */
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.manga-icon {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid white;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.manga-grid a:hover .manga-icon {
+    transform: rotate(3deg) scale(1.05);
+}
+
+.manga-grid p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.manga-grid a:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.25);
+}
